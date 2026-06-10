@@ -1,6 +1,7 @@
 export const DATA = {
   name: "Dhruv Lallukarshanwala",
   role: "Front-End Developer",
+  siteUrl: "https://dhruv-protfolio-psi.vercel.app",
   description: "Specializing in high-performance React and Next.js applications with a focus on technical precision and exceptional user experiences.",
   profileImage: "/profile/dhruv-passport-size.png",
   heroImage: "/profile/hero.png",
