@@ -18,6 +18,7 @@ const siteUrl =
     : DATA.siteUrl);
 
 const title = `${DATA.name} | ${DATA.role}`;
+const ogImageUrl = new URL(DATA.ogImage.path, siteUrl).href;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -26,14 +27,16 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description: DATA.description,
-    url: "/",
+    url: siteUrl,
     siteName: DATA.name,
     images: [
       {
-        url: "/profile/dhruv.png",
-        width: 941,
-        height: 1672,
+        url: ogImageUrl,
+        secureUrl: ogImageUrl,
+        width: DATA.ogImage.width,
+        height: DATA.ogImage.height,
         alt: DATA.name,
+        type: DATA.ogImage.type,
       },
     ],
     locale: "en_US",
@@ -43,7 +46,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description: DATA.description,
-    images: ["/profile/dhruv.png"],
+    images: [
+      {
+        url: ogImageUrl,
+        secureUrl: ogImageUrl,
+        alt: DATA.name,
+        type: DATA.ogImage.type,
+      },
+    ],
   },
 };
 
